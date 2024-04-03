@@ -1,0 +1,29 @@
+{
+  "name": "StockGuardian",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lerna run start",
+    "dev": "lerna run dev",
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky",
+    "pre-commit": "lerna run lint && lerna run pretty"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "husky": "^9.0.11",
+    "lerna": "^8.1.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5"
+  }
+}

@@ -1,0 +1,3 @@
+{
+  "*.jsx": ["pnpm eslint . --ext js,jsx --fix", "pnpm prettier --write ."]
+}
