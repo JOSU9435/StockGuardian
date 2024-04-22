@@ -1,0 +1,33 @@
+.home {
+  display: flex;
+
+  .controls {
+    display: flex;
+    width: 20rem;
+    min-height: 100vh;
+
+    background-color: #f0eaf9;
+
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .transactions {
+    max-height: 100vh;
+    flex-grow: 1;
+    padding: 1rem;
+    background-color: #fefffe;
+  }
+}
+
+@media (width < 700px) {
+  .home {
+    flex-direction: column-reverse;
+    min-height: 100vh;
+    .controls {
+      min-height: unset;
+      width: 100%;
+    }
+  }
+}
