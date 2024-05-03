@@ -29,6 +29,7 @@ app
 
 // =========================== ROUTES START ===========================
 app.use(`${Constants.Server.ROOT}/`, Routes.healthCheckRouter);
+app.use(`${Constants.Server.ROOT}/predictions`, Routes.stockpredictionRouter);
 
 // =========================== ROUTES END ===========================
 

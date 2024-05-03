@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import copy
+import json
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.decomposition import PCA
 from sklearn.ensemble import IsolationForest
@@ -8,7 +9,7 @@ from sklearn.svm import OneClassSVM
 from sklearn.neighbors import LocalOutlierFactor
 from sklearn.utils import resample
 
-df = pd.read_csv("data/adani.csv")
+df = pd.read_csv("/home/josu/Desktop/Projects/StockGuardian/packages/api/model/data/adani.csv")
 
 unique_symbols = {}
 
@@ -250,8 +251,12 @@ for sym in df_lof:
         left_index=True,
         right_index=True,
     )
-    stock_with_fraud_ensemble[sym]["timestamp"] = pd.to_datetime(
-        stock_with_fraud_ensemble[sym]["timestamp"], unit="ns"
-    )
+    # stock_with_fraud_ensemble[sym]["timestamp"] = pd.to_datetime(
+    #     stock_with_fraud_ensemble[sym]["timestamp"], unit="ns"
+    # )
+    stock_with_fraud_ensemble[sym] = stock_with_fraud_ensemble[sym].to_dict('records')
 
-print(stock_with_fraud_ensemble)
+with open('output.json', 'w') as fp:
+    json.dump(stock_with_fraud_ensemble, fp, indent=2)
+
+print("complete")
