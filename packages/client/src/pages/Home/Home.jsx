@@ -2,13 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./Home.module.scss";
 import ApexCharts from "apexcharts";
 
-import {
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-  Button,
-} from "@mui/material";
+import { FormControl, InputLabel, Select, MenuItem } from "@mui/material";
 
 const Home = () => {
   const [stock, setStock] = useState("");
@@ -94,7 +88,13 @@ const Home = () => {
   return (
     <div className={styles.home}>
       <div className={styles.controls}>
-        <FormControl size="small" margin="normal" color="secondary">
+        <div className={styles.title}>STOCKGUARDIAN</div>
+        <FormControl
+          className={styles.form}
+          size="small"
+          margin="normal"
+          color="secondary"
+        >
           <InputLabel>Stock</InputLabel>
           <Select value={stock} label="Age" onChange={handleChange}>
             {stockSymbols.map((sym) => (
@@ -104,10 +104,6 @@ const Home = () => {
             ))}
           </Select>
         </FormControl>
-
-        <Button size="medium" variant="contained" color="secondary">
-          Submit
-        </Button>
       </div>
       <div className={styles.graph}></div>
     </div>

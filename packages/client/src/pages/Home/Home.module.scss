@@ -9,8 +9,18 @@
     background-color: #f0eaf9;
 
     flex-direction: column;
-    justify-content: center;
     padding: 2rem;
+
+    .title {
+      color: #9c27b0;
+      font-size: 1.75rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .form {
+      margin: auto 0;
+    }
   }
 
   .graph {
