@@ -246,7 +246,7 @@ stock_with_fraud_ensemble = {}
 
 for sym in df_lof:
     stock_with_fraud_ensemble[sym] = pd.merge(
-        unique_symbols[sym][["timestamp", "symbol", "company"]],
+        unique_symbols[sym][["timestamp", "symbol", "company", "close"]],
         df_ensemble[sym],
         left_index=True,
         right_index=True,
