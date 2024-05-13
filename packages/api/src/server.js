@@ -5,7 +5,6 @@ import morgan from "morgan";
 import cors from "cors";
 dotenv.config();
 
-// import * as Routes from "./routes";
 import * as Routes from "./routes/index.js";
 import * as Constants from "./globals/constants/index.js";
 
@@ -16,7 +15,6 @@ const app = express();
 app
   .use(
     cors({
-      origin: ["*"],
       credentials: true,
     })
   )
@@ -29,6 +27,7 @@ app
 
 // =========================== ROUTES START ===========================
 app.use(`${Constants.Server.ROOT}/`, Routes.healthCheckRouter);
+app.use(`${Constants.Server.ROOT}/predictions`, Routes.stockpredictionRouter);
 
 // =========================== ROUTES END ===========================
 

@@ -25,3 +25,5 @@ venv
 *.sln
 *.sw?
 .env
+
+output.json

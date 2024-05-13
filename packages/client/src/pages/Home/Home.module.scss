@@ -1,0 +1,45 @@
+.home {
+  display: flex;
+
+  .controls {
+    display: flex;
+    width: 20rem;
+    min-height: 100vh;
+
+    background-color: #f0eaf9;
+
+    flex-direction: column;
+    padding: 2rem;
+
+    .title {
+      color: #9c27b0;
+      font-size: 1.75rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .form {
+      margin: auto 0;
+    }
+  }
+
+  .graph {
+    max-height: 100vh;
+    flex-grow: 1;
+    padding: 1rem;
+    background-color: #fefffe;
+
+    margin: 1rem;
+  }
+}
+
+@media (width < 700px) {
+  .home {
+    flex-direction: column-reverse;
+    min-height: 100vh;
+    .controls {
+      min-height: unset;
+      width: 100%;
+    }
+  }
+}
